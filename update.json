@@ -1,0 +1,15 @@
+{
+  "app_name": "РЈРјРЅС‹Рµ Р”СЂСѓР·СЊСЏ",
+  "package": "ru.kit.umnyedruzya",
+  "version": "1.0.0.1",
+  "version_code": 1,
+  "apk_url": "https://YOUR-HOST/updates/umnye-druzya-1.0.0.1.apk",
+  "size_bytes": 0,
+  "changelog": [
+    "РџРµСЂРІР°СЏ РІРµСЂСЃРёСЏ вЂ” РЈРјРЅС‹Рµ Р”СЂСѓР·СЊСЏ",
+    "Р”РёРЅРѕР·Р°РІСЂС‹-РїРµСЂСЃРѕРЅР°Р¶Рё Рё СЂР°Р·РІРёРІР°СЋС‰РёРµ РёРіСЂС‹"
+  ],
+  "date": "2026-09-29",
+  "min_supported": "1.0.0.0",
+  "update_policy": "prompt"
+}
