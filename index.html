@@ -2,6 +2,9 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Умные Друзья — скачать игру</title>
 <style>
@@ -26,23 +29,27 @@ ul li{padding:3px 0;font-size:14px;}
   <div class="dino">🦖</div>
   <h1>Умные Друзья</h1>
   <div class="sub">Развивающая игра с динозаврами для детей</div>
-  <span class="badge" id="ver">v1.0.0.1</span>
+  <span class="badge" id="ver">…</span>
   <a class="dl" id="dlink" href="#" download>⬇ Скачать APK</a>
   <br><a class="btn-sec" href="update.json">Проверить обновления (json)</a>
   <div class="meta">
-    <div id="info">Загрузка информации о версии…</div>
+    <div id="info">Загрузка…</div>
     <ul id="cl"></ul>
   </div>
 </div>
 <script>
-fetch('update.json').then(function(r){return r.json();}).then(function(j){
-  var iv=document.getElementById('ver'); iv.textContent='v'+j.version;
-  var dl=document.getElementById('dlink'); dl.href=j.apk_url;
-  var inf=document.getElementById('info');
-  inf.innerHTML='<b>Версия:</b> '+j.version+' · <b>Пакет:</b> '+j.package+'<br>Размер: '+(j.size_bytes?(Math.round(j.size_bytes/1048576*10)/10)+' МБ':'—');
-  var cl=document.getElementById('cl');
+function apply(j){
+  document.getElementById('ver').textContent='v'+j.version;
+  document.getElementById('dlink').href=j.apk_url;
+  document.getElementById('info').innerHTML='<b>Версия:</b> '+j.version+' · <b>Пакет:</b> '+j.package+'<br>Размер: '+(j.size_bytes?(Math.round(j.size_bytes/1048576*10)/10)+' МБ':'—');
+  var cl=document.getElementById('cl'); cl.innerHTML='';
   (j.changelog||[]).forEach(function(t){ var li=document.createElement('li'); li.textContent='· '+t; cl.appendChild(li); });
-}).catch(function(e){ document.getElementById('info').textContent='Не удалось загрузить update.json ('+e+')'; });
+}
+function load(){
+  fetch('update.json?cb='+Date.now(), {cache:'no-store'}).then(function(r){return r.json();}).then(apply).catch(function(e){ document.getElementById('info').textContent='Обновление… ('+e+')'; setTimeout(load,3000); });
+}
+load();
+setInterval(load, 30000);
 </script>
 </body>
 </html>
