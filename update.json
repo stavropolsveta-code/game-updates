@@ -1,15 +1,12 @@
 {
   "app_name": "Умные Друзья",
   "package": "ru.kit.umnyedruzya",
-  "version": "1.0.0.1",
-  "version_code": 1,
-  "apk_url": "https://github.com/stavropolsveta-code/game-updates/releases/download/v1.0.0.1/umnye-druzya-1.0.0.1.apk",
+  "version": "1.0.0.2",
+  "version_code": 2,
+  "apk_url": "https://github.com/stavropolsveta-code/game-updates/releases/download/v1.0.0.2/umnye-druzya-1.0.0.2.apk",
   "manifest_url": "https://raw.githubusercontent.com/stavropolsveta-code/game-updates/main/update.json",
-  "size_bytes": 0,
-  "changelog": [
-    "Первая версия — Умные Друзья",
-    "Динозавры-персонажи и развивающие игры"
-  ],
+  "size_bytes": 28292250,
+  "changelog": ["Исправлен пустой экран", "Добавлены новые мини-игры"],
   "date": "2026-09-30",
   "min_supported": "1.0.0.0",
   "update_policy": "prompt"
